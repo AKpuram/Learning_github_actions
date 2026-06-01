@@ -20,6 +20,6 @@ job:
        python-version: '3.10'
 
    - name: Run python description
-     runt: 
+     runt: .github/workflows/python_scripts/hello.py
    
     
