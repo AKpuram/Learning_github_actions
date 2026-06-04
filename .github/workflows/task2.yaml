@@ -20,7 +20,7 @@ jobs:
           python-version: '3.12'
 
       - name: Run Python Script
-        run: python generate_report.py
+        run: .github/workflows/python_scripts/generate_report.py
 
       - name: Upload Report
         uses: actions/upload-artifact@v4
