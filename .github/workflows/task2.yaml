@@ -1,1 +1,29 @@
-name: 
+
+name: Generate Report
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Python Script
+        run: python generate_report.py
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-report
+          path: report.txt
